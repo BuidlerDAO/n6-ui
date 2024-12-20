@@ -32,15 +32,17 @@ const NButtons: React.FC<NButtonsProps> = ({
     'flex shrink-0 cursor-pointer items-center justify-center px-[20px] py-[10px] text-center text-base font-semibold';
 
   // Size class based on 'small' state
-  const sizeClasses = state & ButtonState.Small ? 'rounded-full bg-[#C379FC1A] !text-xs' : 'h-[50px] rounded-[16px]';
+  const sizeClasses = !!(state & ButtonState.Small)
+    ? 'rounded-full bg-[#C379FC1A] !text-xs'
+    : 'h-[50px] rounded-[16px]';
 
   const typeClasses = getStyle(state);
-  const disableClasses = state & ButtonState.Disabled ? 'opacity-65 cursor-not-allowed' : '';
+  const disableClasses = !!(state & ButtonState.Disabled) ? 'opacity-65 cursor-not-allowed' : '';
 
   return (
     <div
       className={classNames(baseClasses, sizeClasses, typeClasses, disableClasses, className)}
-      onClick={state & ButtonState.Disabled ? undefined : onClick}
+      onClick={!!(state & ButtonState.Disabled) ? undefined : onClick}
     >
       {children}
     </div>

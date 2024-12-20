@@ -1,6 +1,6 @@
 {
   "name": "n6-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "N6 Network UI Framework",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
