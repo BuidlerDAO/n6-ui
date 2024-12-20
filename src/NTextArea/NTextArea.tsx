@@ -4,14 +4,9 @@ import debounce from 'lodash.debounce';
 
 // Enum for Textarea status using bitwise operations
 export enum TextareaStatus {
-  Normal = 0, // 000
-  Error = 1 << 0, // 001
-  Warning = 1 << 1, // 010
-}
-
-// Helper function to check if a specific status is set in the current state
-function hasStatus(state: number, status: TextareaStatus): boolean {
-  return (state & status) === status;
+  Normal = 1 << 0, // 000
+  Error = 1 << 1, // 001
+  Warning = 1 << 2, // 010
 }
 
 export type NTextareaProps = {
@@ -72,9 +67,9 @@ export const NTextarea: React.FC<NTextareaProps> = ({
         'relative w-full rounded-[20px] border-[1px] border-[transparent] bg-gray-1 px-4 py-[10px] outline-none',
         containerClassName,
         focus && '!border-gray-2',
-        hasStatus(status, TextareaStatus.Error) && '!border-[#E94344]', // Apply error border if error status is set
-        hasStatus(status, TextareaStatus.Warning) && '!border-[#FF9800]', // Apply warning border if warning status is set
-        status === TextareaStatus.Normal && 'border-transparent',
+        !!(status & TextareaStatus.Error) && '!border-[#E94344]', // Apply error border if error status is set
+        !!(status & TextareaStatus.Warning) && '!border-[#FF9800]', // Apply warning border if warning status is set
+        !!(status & TextareaStatus.Normal) && 'border-transparent',
       )}
     >
       <textarea
