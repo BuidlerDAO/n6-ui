@@ -4,3 +4,6 @@ export * from './NCommonHeader';
 export * from './NTryAgain';
 export * from './NInput';
 export * from './NTextArea';
+export * from './NSearchInput';
+export * from './NSearch';
+export * from './NChip';
