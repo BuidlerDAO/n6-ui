@@ -67,6 +67,8 @@
     "dist/**/*"
   ],
   "dependencies": {
+    "@types/lodash.debounce": "^4.0.9",
+    "classnames": "^2.5.1",
     "tailwindcss": "^3.4.16"
   }
 }
