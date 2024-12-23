@@ -1,2 +1,2 @@
 # nui
-N6 Network UI Frameworks
+N6 Network UI Framework
