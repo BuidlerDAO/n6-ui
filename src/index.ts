@@ -13,3 +13,4 @@ export * from './NSelect';
 export * from './NCheckbox';
 export * from './NBottomSheet';
 export * from './NTruncatedText';
+export * from './NTabs';
