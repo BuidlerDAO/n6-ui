@@ -165,3 +165,5 @@ const context = createContext({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   registerTabBar: (title: ReactNode, name: string) => {},
 });
+
+export default NTabs;
