@@ -25,7 +25,17 @@ export enum NTabsState {
   Center = 2, // 010
 }
 
-export default function NTabs({
+// 定义 NTabs 参数类型
+export interface NTabsProps extends PropsWithChildren {
+  state?: NTabsState;
+  defaultActivePane: string;
+  activePane?: string;
+  className?: string;
+  neck?: ReactNode;
+  onChange(name: string): void;
+}
+
+const NTabs: React.FC<NTabsProps> = ({
   state = NTabsState.None,
   className,
   children,
@@ -33,14 +43,7 @@ export default function NTabs({
   defaultActivePane,
   activePane: propActivePane,
   onChange,
-}: PropsWithChildren<{
-  state?: NTabsState;
-  defaultActivePane: string;
-  activePane?: string;
-  className?: string;
-  neck?: React.ReactNode;
-  onChange(name: string): void;
-}>) {
+}) => {
   const [tabs, setTabs] = useState<{ name: string; title: ReactNode }[]>([]);
   const [internalActivePane, setInternalActivePane] = useState(defaultActivePane);
   const swiperRef = useRef<SwiperRef>(null);
@@ -140,7 +143,7 @@ export default function NTabs({
       </Swiper>
     </context.Provider>
   );
-}
+};
 
 export type NTabPaneProps = {
   className?: string;
