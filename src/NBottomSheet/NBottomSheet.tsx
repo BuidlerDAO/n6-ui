@@ -40,7 +40,10 @@ const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheet
           className={`fixed inset-x-0 bottom-0 transform text-[#4F4F4F] ${
             isOpen ? 'translate-y-0' : 'translate-y-full'
           } transition-transform duration-300 ease-in-out`}
-          style={{ zIndex: zIndex + 1 }}
+          style={{
+            zIndex: zIndex + 1,
+            transform: isOpen ? 'translateY(0)' : 'translateY(-100%)',
+          }}
         >
           {header}
           <div
