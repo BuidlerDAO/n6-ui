@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, forwardRef, useImperativeHandle, PropsWithChildren } from 'react';
 
 interface NBottomSheetProps {

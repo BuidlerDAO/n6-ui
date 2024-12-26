@@ -12,17 +12,29 @@ export default {
       format: 'cjs',
       sourcemap: true,
       exports: 'named',
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM', // 指定 react 和 react-dom 的全局变量
+      },
     },
     {
       file: 'dist/index.esm.js',
       format: 'esm',
       sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM', // 指定 react 和 react-dom 的全局变量
+      },
     },
     {
       file: 'dist/index.umd.js',
       format: 'umd',
-      name: 'Nui',
+      name: 'n6-ui',
       sourcemap: true,
+      globals: {
+        react: 'React',
+        'react-dom': 'ReactDOM', // 指定 react 和 react-dom 的全局变量
+      },
     },
   ],
   plugins: [
@@ -30,7 +42,6 @@ export default {
     commonjs(),
     typescript({ tsconfig: './tsconfig.json' }),
     postcss({
-      extract: 'index.css', // 将 CSS 抽离成单独的文件
       modules: true, // 启用 CSS 模块
       extract: true, // 单独生成 CSS 文件
       minimize: true, // 压缩 CSS
