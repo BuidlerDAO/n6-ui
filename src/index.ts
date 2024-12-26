@@ -1,4 +1,5 @@
 import './styles/index.css';
+import './dist/index.css';
 
 export * from './NButton';
 export * from './NButtons';
