@@ -1,8 +1,6 @@
-'use client';
-
 import React, { useState, forwardRef, useImperativeHandle, PropsWithChildren } from 'react';
 
-interface BottomSheetProps {
+interface NBottomSheetProps {
   onClose?: () => void;
   zIndex?: number;
   header?: React.ReactNode;
@@ -11,13 +9,13 @@ interface BottomSheetProps {
   autoHeight?: boolean;
 }
 
-export interface BottomSheetRefs {
+export interface NBottomSheetRefs {
   toggle: () => void;
   open: () => void;
   close: () => void;
 }
 
-const NBottomSheet = forwardRef<BottomSheetRefs, PropsWithChildren<BottomSheetProps>>(
+const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheetProps>>(
   ({ children, header, zIndex = 999, className, onClose, top = 142, autoHeight }, ref) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -34,13 +32,15 @@ const NBottomSheet = forwardRef<BottomSheetRefs, PropsWithChildren<BottomSheetPr
     }));
 
     return (
-      <div>
+      <>
         <div
           role="dialog"
           className={`fixed inset-x-0 bottom-0 transform text-[#4F4F4F] ${
             isOpen ? 'translate-y-0' : 'translate-y-full'
           } transition-transform duration-300 ease-in-out`}
-          style={{ zIndex: zIndex + 1 }}
+          style={{
+            zIndex: zIndex + 1,
+          }}
         >
           {header}
           <div
@@ -62,7 +62,7 @@ const NBottomSheet = forwardRef<BottomSheetRefs, PropsWithChildren<BottomSheetPr
             style={{ zIndex, transition: 'opacity 1000ms ease-in-out' }}
           />
         )}
-      </div>
+      </>
     );
   },
 );

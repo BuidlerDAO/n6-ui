@@ -1,3 +1,5 @@
+import './styles/index.css';
+
 export * from './NButton';
 export * from './NButtons';
 export * from './NCommonHeader';
@@ -13,4 +15,5 @@ export * from './NSelect';
 export * from './NCheckbox';
 export * from './NBottomSheet';
 export * from './NTruncatedText';
+export * from './NTabs';
 export * from './NLoader';

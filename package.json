@@ -1,6 +1,6 @@
 {
   "name": "n6-ui",
-  "version": "1.0.3",
+  "version": "1.0.14",
   "description": "N6 Network UI Framework",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,10 +42,12 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.14",
+    "@types/lodash.uniqby": "^4.7.9",
     "@types/react": "^18.3.16",
     "@types/react-dom": "^18.2.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
@@ -70,6 +72,8 @@
     "@types/lodash.debounce": "^4.0.9",
     "classnames": "^2.5.1",
     "lodash.debounce": "^4.0.8",
+    "lodash.uniqby": "^4.7.0",
+    "swiper": "^8.4.7",
     "react-loader-spinner": "^6.1.6",
     "tailwindcss": "^3.4.16"
   }
