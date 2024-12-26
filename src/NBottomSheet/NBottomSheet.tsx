@@ -42,7 +42,6 @@ const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheet
           } transition-transform duration-300 ease-in-out`}
           style={{
             zIndex: zIndex + 1,
-            transform: isOpen ? 'translateY(0)' : 'translateY(-100%)',
           }}
         >
           {header}
