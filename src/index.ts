@@ -17,3 +17,4 @@ export * from './NBottomSheet';
 export * from './NTruncatedText';
 export * from './NTabs';
 export * from './NLoader';
+export * from './NMessage';
