@@ -30,6 +30,7 @@ export default {
     commonjs(),
     typescript({ tsconfig: './tsconfig.json' }),
     postcss({
+      extract: 'index.css', // 将 CSS 抽离成单独的文件
       modules: true, // 启用 CSS 模块
       extract: true, // 单独生成 CSS 文件
       minimize: true, // 压缩 CSS

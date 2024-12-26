@@ -1,3 +1,5 @@
+import './styles/index.css';
+
 export * from './NButton';
 export * from './NButtons';
 export * from './NCommonHeader';
