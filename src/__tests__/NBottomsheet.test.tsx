@@ -1,9 +1,9 @@
 import { render, screen, act } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
-import { NBottomSheet, BottomSheetRefs } from '../NBottomSheet';
+import { NBottomSheet, NBottomSheetRefs } from '../NBottomSheet';
 describe('NBottomSheet Component', () => {
-  let bottomSheetRef: React.RefObject<BottomSheetRefs>;
+  let bottomSheetRef: React.RefObject<NBottomSheetRefs>;
 
   beforeEach(() => {
     bottomSheetRef = React.createRef();
