@@ -34,7 +34,7 @@ const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheet
     }));
 
     return (
-      <div>
+      <>
         <div
           role="dialog"
           className={`fixed inset-x-0 bottom-0 transform text-[#4F4F4F] ${
@@ -62,7 +62,7 @@ const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheet
             style={{ zIndex, transition: 'opacity 1000ms ease-in-out' }}
           />
         )}
-      </div>
+      </>
     );
   },
 );
