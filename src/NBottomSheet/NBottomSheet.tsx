@@ -2,7 +2,7 @@
 
 import React, { useState, forwardRef, useImperativeHandle, PropsWithChildren } from 'react';
 
-interface BottomSheetProps {
+interface NBottomSheetProps {
   onClose?: () => void;
   zIndex?: number;
   header?: React.ReactNode;
@@ -11,13 +11,13 @@ interface BottomSheetProps {
   autoHeight?: boolean;
 }
 
-export interface BottomSheetRefs {
+export interface NBottomSheetRefs {
   toggle: () => void;
   open: () => void;
   close: () => void;
 }
 
-const NBottomSheet = forwardRef<BottomSheetRefs, PropsWithChildren<BottomSheetProps>>(
+const NBottomSheet = forwardRef<NBottomSheetRefs, PropsWithChildren<NBottomSheetProps>>(
   ({ children, header, zIndex = 999, className, onClose, top = 142, autoHeight }, ref) => {
     const [isOpen, setIsOpen] = useState(false);
 
