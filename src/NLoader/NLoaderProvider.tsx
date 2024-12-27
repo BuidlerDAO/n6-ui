@@ -1,5 +1,3 @@
-'use client';
-
 import { createContext, PropsWithChildren, useCallback, useContext, useState } from 'react';
 import React from 'react';
 
