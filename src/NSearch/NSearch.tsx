@@ -73,7 +73,7 @@ const NSearch: React.FC<NSearchProps> = ({
   return (
     <div
       className={classnames(
-        'relative h-[42px] rounded-[20px] px-4 py-[10px] pl-[48px] outline-none',
+        'flex items-center relative h-[42px] rounded-[20px] pr-4 py-[10px] pl-[48px] outline-none',
         containerClassName,
         focus ? 'bg-gray-1' : 'bg-black-2',
       )}
@@ -84,7 +84,7 @@ const NSearch: React.FC<NSearchProps> = ({
       <input
         value={content}
         className={classnames(
-          'text-white m-0 mt-[2px] block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
+          'text-white m-0 block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
           inputClassName,
         )}
         placeholder={placeholder}
