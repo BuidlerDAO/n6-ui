@@ -16,9 +16,9 @@ const NAvatar: React.FC<NAvatarProps> = ({ src, defaultAvatar, alt = 'Avatar', o
   };
 
   return isImgError ? (
-    <img src={src} alt={alt} onError={handleError} onClick={onClick} className={className} />
-  ) : (
     <img src={defaultAvatar} alt={alt} onError={handleError} onClick={onClick} className={className} />
+  ) : (
+    <img src={src} alt={alt} onError={handleError} onClick={onClick} className={className} />
   );
 };
 

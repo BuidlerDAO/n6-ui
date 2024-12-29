@@ -1,8 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 
+// Define the HapticFeedback type without importing from SDK
+type ImpactStyle = 'light' | 'medium' | 'heavy' | 'rigid' | 'soft';
 type HapticFeedback = {
-  vibrate: () => void;
+  impactOccurred: (style: ImpactStyle) => void;
 };
 
 type NSaveButtonProps = {
@@ -14,7 +16,7 @@ type NSaveButtonProps = {
   width?: string;
   children?: React.ReactNode;
   hapticFeedback?: HapticFeedback;
-  vibrateFn?: (hapticFeedback: HapticFeedback) => void;
+  vibrateFn: (hapticFeedback?: HapticFeedback) => void;
 };
 
 const NSaveButton: React.FC<NSaveButtonProps> = ({
@@ -31,7 +33,7 @@ const NSaveButton: React.FC<NSaveButtonProps> = ({
   return (
     <button
       onClick={() => {
-        if (color === 'text-main' && hapticFeedback && vibrateFn) {
+        if (color === 'text-main') {
           vibrateFn(hapticFeedback);
         }
         onClick?.();

@@ -7,6 +7,10 @@ describe('NAvatar Component', () => {
   test('renders with default avatar when image fails to load', () => {
     render(<NAvatar src="invalid_image_url.jpg" defaultAvatar="default_avatar.jpg" alt="Avatar" />);
     const imgElement = screen.getByAltText('Avatar');
+
+    // Simulate image load error
+    fireEvent.error(imgElement);
+
     expect(imgElement).toHaveAttribute('src', 'default_avatar.jpg');
   });
 
