@@ -59,8 +59,8 @@ export const NInput: React.FC<NInputProps> = ({
     <div
       className={classNames(
         'relative h-[46px] w-full',
-        (state & InputState.Search) ? 'pl-[48px]' : 'rounded-[20px]',
-        'border-[2px] border-[transparent] bg-gray-1 px-4 py-[12px] outline-none',
+        state & InputState.Search ? 'pl-[48px]' : 'rounded-[20px]',
+        'border-[2px] border-[transparent] bg-gray-1 pr-4 py-[12px] outline-none',
         containerClassName,
         (focus || !!(state & InputState.Focused)) &&
           (!!(state & InputState.Search) && value ? '!border-b-gray-2' : '!border-gray-2'),

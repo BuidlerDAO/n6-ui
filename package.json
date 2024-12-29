@@ -70,6 +70,7 @@
   ],
   "dependencies": {
     "@types/lodash.debounce": "^4.0.9",
+    "ahooks": "^3.8.4",
     "classnames": "^2.5.1",
     "lodash.debounce": "^4.0.8",
     "lodash.uniqby": "^4.7.0",
