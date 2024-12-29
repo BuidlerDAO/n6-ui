@@ -1,6 +1,5 @@
 import './styles/index.css';
 
-export * from './NButton';
 export * from './NButtons';
 export * from './NCommonHeader';
 export * from './NTryAgain';
@@ -18,3 +17,6 @@ export * from './NTruncatedText';
 export * from './NTabs';
 export * from './NLoader';
 export * from './NMessage';
+export * from './NSettingGroup';
+export * from './NReputation';
+export * from './NScrollable';
