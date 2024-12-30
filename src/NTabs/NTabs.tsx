@@ -90,19 +90,17 @@ const NTabs: React.FC<NTabsProps> = ({
     <context.Provider value={{ activePane, tabs, registerTabBar }}>
       <div
         className={classNames(
-          !!(state & NTabsState.Big) &&
-            'overflow-hidden rounded-[100px] border-b-[1px] border-[#FFFFFF1A] bg-black-2 py-[2px]',
-          'mb-3 flex h-[28px] w-full',
+          state & NTabsState.Big ? 'h-[48px] ' : 'h-[28px] overflow-hidden rounded-full bg-black-2 py-[2px]',
+          'mb-3 flex  w-full',
           className,
         )}
       >
         {tabs.map((tab, idx) => (
           <div
             className={classNames(
-              'cursor-pointer',
-              'flex items-center justify-center overflow-hidden',
+              'cursor-pointer flex items-center justify-center overflow-hidden text-xs',
               state & NTabsState.Center ? '' : 'flex-1',
-              state & NTabsState.Big ? 'text-xs font-semibold' : 'px-[20px] py-[2px] text-xs',
+              state & NTabsState.Big ? 'font-semibold' : 'px-[20px] py-[2px]',
               state & NTabsState.Big
                 ? activePane === tab.name
                   ? 'text-white border-b-2 border-main'
