@@ -10,5 +10,11 @@ export default function NTitle({
   className?: string;
   lines?: 1 | 2 | 3;
 }) {
-  return <NTruncatedText lines={lines ?? 1} text={!!title ? title : 'No title added'} className={className} />;
+  return (
+    <NTruncatedText
+      lines={lines ?? 1}
+      text={title && title.length > 0 ? title : 'No title added'}
+      className={className}
+    />
+  );
 }
