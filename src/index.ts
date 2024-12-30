@@ -21,3 +21,4 @@ export * from './NSettingGroup';
 export * from './NReputation';
 export * from './NScrollable';
 export * from './NIntro';
+export * from './NSchoolAndCompany';
