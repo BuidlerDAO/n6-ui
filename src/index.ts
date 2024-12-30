@@ -22,3 +22,4 @@ export * from './NReputation';
 export * from './NScrollable';
 export * from './NIntro';
 export * from './NSchoolAndCompany';
+export * from './NTitle';
