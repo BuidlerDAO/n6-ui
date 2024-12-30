@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BuidlerDAO/nui.git"
+    "url": "git+https://github.com/BuidlerDAO/n6-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/BuidlerDAO/nui/issues"
+    "url": "https://github.com/BuidlerDAO/n6-ui/issues"
   },
-  "homepage": "https://github.com/BuidlerDAO/nui/blob/main/README.md",
+  "homepage": "https://github.com/BuidlerDAO/n6-ui/blob/main/README.md",
   "keywords": [
     "ui-library",
     "react",
