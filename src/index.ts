@@ -13,7 +13,7 @@ export * from './NModal';
 export * from './NSelect';
 export * from './NCheckbox';
 export * from './NBottomSheet';
-export * from './NTruncatedText';
+export * from './NText';
 export * from './NTabs';
 export * from './NLoader';
 export * from './NMessage';

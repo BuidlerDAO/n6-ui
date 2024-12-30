@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { NTruncatedText } from '../NTruncatedText'; // Adjust the import path accordingly
+import { NTruncatedText } from '../NText'; // Adjust the import path accordingly
 
 describe('NTruncatedText Component', () => {
   // Test case 1: Renders the text prop correctly

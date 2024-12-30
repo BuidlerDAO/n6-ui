@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { NTruncatedText } from '../NTruncatedText';
+import { NTruncatedText } from '../NText';
 
 export interface NSettingGroupItem {
   title: React.ReactElement | string;

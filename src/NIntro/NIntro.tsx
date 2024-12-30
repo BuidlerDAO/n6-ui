@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { NTruncatedText } from '../NText';
 import React from 'react';
 
-export default function Intro({ intro, className }: { intro: string | undefined; className?: string }) {
+export default function NIntro({ intro, className }: { intro: string | undefined; className?: string }) {
   return (
     <NTruncatedText
       lines={3}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NModal } from '../NModal';
 import { ButtonState, NButtons } from '../NButtons';
-import { NTruncatedText } from '../NTruncatedText';
+import { NTruncatedText } from '../NText';
 import classNames from 'classnames';
 
 export type SelectOptions = {
