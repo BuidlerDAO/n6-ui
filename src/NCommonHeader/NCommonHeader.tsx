@@ -7,12 +7,7 @@ interface NCommonHeaderProps {
   right?: React.ReactNode | null;
 }
 
-const NCommonHeader: React.FC<NCommonHeaderProps> = ({
-  leftIcon,
-  onBack,
-  center,
-  right,
-}) => {
+const NCommonHeader: React.FC<NCommonHeaderProps> = ({ leftIcon, onBack, center, right }) => {
   return (
     <div className="relative flex h-[48px] w-full items-center justify-center px-4">
       <button
@@ -23,7 +18,9 @@ const NCommonHeader: React.FC<NCommonHeaderProps> = ({
         {leftIcon}
       </button>
 
-      <div className="flex-grow text-center">{typeof center === 'string' ? <div>{center}</div> : center}</div>
+      <div className="flex-grow text-center flex items-center  justify-center">
+        {typeof center === 'string' ? <div>{center}</div> : center}
+      </div>
 
       {right && (
         <div
