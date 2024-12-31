@@ -54,7 +54,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
       return (
         <button
           onClick={handleSubmit}
-          className="textWhite/50 absolute right-2.5 top-1/2 -translate-y-1/2 textWhite/50 hover:textWhite cursor-pointer"
+          className="text-white/50 absolute right-2.5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer"
         >
           {submit.icon}
         </button>
@@ -66,7 +66,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
         <button
           onClick={handleClear}
           className={classnames(
-            'textWhite/50 absolute right-2.5 top-1/2 -translate-y-1/2 textWhite/50 hover:textWhite cursor-pointer',
+            'text-white/50 absolute right-2.5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer',
             clearIconClassName,
           )}
         >
@@ -88,7 +88,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
       <input
         value={content}
         className={classnames(
-          'textWhite block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
+          'text-white block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
           inputClassName,
         )}
         placeholder={placeholder}
@@ -131,7 +131,7 @@ export function ClearIcon() {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="textWhite/50 hover:textWhite"
+      className="text-white/50 hover:text-white"
     >
       <path d="M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M4 4L12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
