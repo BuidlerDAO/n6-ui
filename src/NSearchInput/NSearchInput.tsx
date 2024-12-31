@@ -11,6 +11,8 @@ interface NSearchInputProps {
   searchIcon?: React.ReactNode;
   clearIcon?: React.ReactNode;
   debounceTime?: number;
+  /** conflict with clearIcon */
+  submit?: { icon: React.ReactNode; onSubmit?(value: string): void };
 }
 
 const NSearchInput: React.FC<NSearchInputProps> = ({
@@ -21,6 +23,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
   onSearch,
   searchIcon,
   clearIcon,
+  submit,
   debounceTime = 200,
 }) => {
   const [focus, setFocus] = useState(false);
@@ -39,7 +42,38 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
   function handleClear() {
     setContent('');
     debouncedOnSearch.current('');
-    onSearch?.('');
+  }
+
+  function handleSubmit() {
+    setContent('');
+    submit?.onSubmit?.(content);
+  }
+
+  function renderRight() {
+    if (submit) {
+      return (
+        <button
+          onClick={handleSubmit}
+          className="textWhite/50 absolute right-2.5 top-1/2 -translate-y-1/2 textWhite/50 hover:textWhite cursor-pointer"
+        >
+          {submit.icon}
+        </button>
+      );
+    }
+
+    return (
+      content && (
+        <button
+          onClick={handleClear}
+          className={classnames(
+            'textWhite/50 absolute right-2.5 top-1/2 -translate-y-1/2 textWhite/50 hover:textWhite cursor-pointer',
+            clearIconClassName,
+          )}
+        >
+          {clearIcon || <ClearIcon />}
+        </button>
+      )
+    );
   }
 
   return (
@@ -54,7 +88,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
       <input
         value={content}
         className={classnames(
-          'text-white block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
+          'textWhite block w-full bg-[transparent] p-0 placeholder-[white] placeholder-opacity-50 caret-main outline-none',
           inputClassName,
         )}
         placeholder={placeholder}
@@ -62,17 +96,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
         onBlur={() => setFocus(false)}
         onInput={handleInput}
       />
-      {content && (
-        <button
-          onClick={handleClear}
-          className={classnames(
-            'text-white/50 absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer',
-            clearIconClassName,
-          )}
-        >
-          {clearIcon || <ClearIcon />}
-        </button>
-      )}
+      {renderRight()}
     </div>
   );
 };
@@ -107,7 +131,7 @@ export function ClearIcon() {
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="text-white/50 hover:text-white"
+      className="textWhite/50 hover:textWhite"
     >
       <path d="M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M4 4L12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
