@@ -11,6 +11,8 @@ interface NSearchInputProps {
   searchIcon?: React.ReactNode;
   clearIcon?: React.ReactNode;
   debounceTime?: number;
+  /** conflict with clearIcon */
+  submit?: { icon: React.ReactNode; onSubmit?(value: string): void };
 }
 
 const NSearchInput: React.FC<NSearchInputProps> = ({
@@ -21,6 +23,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
   onSearch,
   searchIcon,
   clearIcon,
+  submit,
   debounceTime = 200,
 }) => {
   const [focus, setFocus] = useState(false);
@@ -39,7 +42,38 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
   function handleClear() {
     setContent('');
     debouncedOnSearch.current('');
-    onSearch?.('');
+  }
+
+  function handleSubmit() {
+    setContent('');
+    submit?.onSubmit?.(content);
+  }
+
+  function renderRight() {
+    if (submit) {
+      return (
+        <button
+          onClick={handleSubmit}
+          className="text-white/50 absolute right-2.5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer"
+        >
+          {submit.icon}
+        </button>
+      );
+    }
+
+    return (
+      content && (
+        <button
+          onClick={handleClear}
+          className={classnames(
+            'text-white/50 absolute right-2.5 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer',
+            clearIconClassName,
+          )}
+        >
+          {clearIcon || <ClearIcon />}
+        </button>
+      )
+    );
   }
 
   return (
@@ -62,17 +96,7 @@ const NSearchInput: React.FC<NSearchInputProps> = ({
         onBlur={() => setFocus(false)}
         onInput={handleInput}
       />
-      {content && (
-        <button
-          onClick={handleClear}
-          className={classnames(
-            'text-white/50 absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white cursor-pointer',
-            clearIconClassName,
-          )}
-        >
-          {clearIcon || <ClearIcon />}
-        </button>
-      )}
+      {renderRight()}
     </div>
   );
 };
