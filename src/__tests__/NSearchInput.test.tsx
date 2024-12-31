@@ -30,7 +30,7 @@ describe('NSearchInput Component', () => {
     await waitFor(() => expect(onSearchMock).toHaveBeenCalledWith('test query'), { timeout: 500 });
   });
 
-  test('clears the input and calls onSearch with an empty string on clear', () => {
+  test('clears the input and calls onSearch with an empty string on clear', async () => {
     const onSearchMock = jest.fn();
     render(<NSearchInput onSearch={onSearchMock} />);
 
@@ -45,7 +45,7 @@ describe('NSearchInput Component', () => {
     fireEvent.click(clearButton);
 
     expect(input).toHaveValue('');
-    expect(onSearchMock).toHaveBeenCalledWith('');
+    await waitFor(() => expect(onSearchMock).toHaveBeenCalledWith(''), { timeout: 500 });
   });
 
   test('shows and hides clear button based on input value', () => {
@@ -99,5 +99,4 @@ describe('NSearchInput Component', () => {
     fireEvent.blur(input);
     expect(container).toHaveClass('bg-black-2'); // Default background
   });
-
 });
