@@ -12,7 +12,7 @@ const NCommonHeader: React.FC<NCommonHeaderProps> = ({ leftIcon, onBack, center,
     <div className="relative flex h-[48px] w-full items-center justify-center px-4">
       <button
         className="absolute flex h-full w-[80px] cursor-pointer items-center"
-        style={{ left: '2px' }}
+        style={{ left: '12px' }}
         onClick={onBack}
       >
         {leftIcon}
